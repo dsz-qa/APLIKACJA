@@ -1,0 +1,20 @@
+﻿Finly
+1.0.0.0
+
+winexe
+C#
+.cs
+C:\Users\48577\Desktop\Finly - Aplikacja do zarządzania finansami\obj\Debug\net8.0-windows10.0.19041.0\
+Finly
+none
+false
+TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS10_0_19041_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS10_0_19041_0_OR_GREATER;WINDOWS10_0_18362_0_OR_GREATER;WINDOWS10_0_17763_0_OR_GREATER;WINDOWS8_0_OR_GREATER;WINDOWS7_0_OR_GREATER
+C:\Users\48577\Desktop\Finly - Aplikacja do zarządzania finansami\App.xaml
+262143683694
+
+501090620611
+223-1116554934
+Pages\AccountPage.xaml;Pages\AddExpensePage.xaml;Pages\BudgetsPage.xaml;Pages\CategoriesPage.xaml;Pages\ChartsPage.xaml;Pages\DashboardPage.xaml;Pages\GoalsPage.xaml;Pages\ImportPage.xaml;Pages\ReportsPage.xaml;Pages\SettingsPage.xaml;Pages\SubscriptionsPage.xaml;Pages\TransactionsPage.xaml;Styles\Buttons.xaml;Styles\Controls.xaml;Styles\DataGrid.xaml;Styles\Nav.xaml;Styles\Shared.xaml;Styles\_Index.xaml;Themes\Dark.xaml;Themes\Light.xaml;Views\AuthWindow.xaml;Views\Controls\ToastControl.xaml;Views\Dialogs\ConfirmDialog.xaml;Views\EditExpenseWindow.xaml;Views\EditPersonalWindow.xaml;Views\ShellWindow.xaml;
+
+True
+

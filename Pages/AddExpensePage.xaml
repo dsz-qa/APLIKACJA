@@ -1,0 +1,193 @@
+﻿<UserControl x:Class="Finly.Pages.AddExpensePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Nagłówek -->
+        <TextBlock Grid.Row="0"
+                   Text="Dodaj"
+                   Margin="16"
+                   FontSize="20"
+                   FontWeight="Bold"
+                   Foreground="{DynamicResource App.Foreground}"/>
+
+        <!-- Zakładki -->
+        <TabControl Grid.Row="1"
+                    Margin="16"
+                    Background="{DynamicResource App.Background}"
+                    BorderBrush="{DynamicResource Surface.Border}">
+            <!-- WYDATEK -->
+            <TabItem Header="Wydatek">
+                <Border Padding="16"
+                        Background="{DynamicResource Surface.Background}"
+                        BorderBrush="{DynamicResource Surface.Border}"
+                        BorderThickness="1"
+                        CornerRadius="10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="180"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="8"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="8"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="8"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="16"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Kwota:" VerticalAlignment="Center"/>
+                        <TextBox   x:Name="ExpenseAmountBox" Grid.Row="0" Grid.Column="1"/>
+
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Kategoria:" VerticalAlignment="Center"/>
+                        <ComboBox  x:Name="ExpenseCategoryBox" Grid.Row="2" Grid.Column="1"/>
+
+                        <TextBlock Grid.Row="4" Grid.Column="0" Text="Data:" VerticalAlignment="Center"/>
+                        <DatePicker x:Name="ExpenseDatePicker" Grid.Row="4" Grid.Column="1"/>
+
+                        <TextBlock Grid.Row="6" Grid.Column="0" Text="Opis:" VerticalAlignment="Top"/>
+                        <TextBox   x:Name="ExpenseDescBox"
+                                   Grid.Row="6" Grid.Column="1"
+                                   Height="80"
+                                   TextWrapping="Wrap"
+                                   AcceptsReturn="True"
+                                   VerticalScrollBarVisibility="Auto"/>
+
+                        <StackPanel Grid.Row="8"
+                                    Grid.ColumnSpan="2"
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Right">
+                            <Button Content="Dodaj"
+                                    Margin="0,0,8,0"
+                                    Style="{StaticResource PrimaryButton}"
+                                    Click="SaveExpense_Click"/>
+                            <Button Content="Anuluj"
+                                    Click="Cancel_Click"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </TabItem>
+
+            <!-- PRZYCHÓD -->
+            <TabItem Header="Przychód">
+                <Border Padding="16"
+                        Background="{DynamicResource Surface.Background}"
+                        BorderBrush="{DynamicResource Surface.Border}"
+                        BorderThickness="1"
+                        CornerRadius="10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="180"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="8"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="8"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="8"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="16"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Kwota:" VerticalAlignment="Center"/>
+                        <TextBox   x:Name="IncomeAmountBox" Grid.Row="0" Grid.Column="1"/>
+
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Źródło / kategoria:" VerticalAlignment="Center"/>
+                        <TextBox   x:Name="IncomeSourceBox" Grid.Row="2" Grid.Column="1"/>
+
+                        <TextBlock Grid.Row="4" Grid.Column="0" Text="Data:" VerticalAlignment="Center"/>
+                        <DatePicker x:Name="IncomeDatePicker" Grid.Row="4" Grid.Column="1"/>
+
+                        <TextBlock Grid.Row="6" Grid.Column="0" Text="Opis:" VerticalAlignment="Top"/>
+                        <TextBox   x:Name="IncomeDescBox"
+                                   Grid.Row="6" Grid.Column="1"
+                                   Height="80"
+                                   TextWrapping="Wrap"
+                                   AcceptsReturn="True"
+                                   VerticalScrollBarVisibility="Auto"/>
+
+                        <StackPanel Grid.Row="8"
+                                    Grid.ColumnSpan="2"
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Right">
+                            <Button Content="Dodaj"
+                                    Margin="0,0,8,0"
+                                    Style="{StaticResource PrimaryButton}"
+                                    Click="SaveIncome_Click"/>
+                            <Button Content="Anuluj"
+                                    Click="Cancel_Click"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </TabItem>
+
+            <!-- TRANSFER -->
+            <TabItem Header="Transfer">
+                <Border Padding="16"
+                        Background="{DynamicResource Surface.Background}"
+                        BorderBrush="{DynamicResource Surface.Border}"
+                        BorderThickness="1"
+                        CornerRadius="10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="180"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="8"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="8"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="8"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="16"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Z konta:" VerticalAlignment="Center"/>
+                        <ComboBox  x:Name="TransferFromBox" Grid.Row="0" Grid.Column="1"/>
+
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Na konto:" VerticalAlignment="Center"/>
+                        <ComboBox  x:Name="TransferToBox" Grid.Row="2" Grid.Column="1"/>
+
+                        <TextBlock Grid.Row="4" Grid.Column="0" Text="Kwota:" VerticalAlignment="Center"/>
+                        <TextBox   x:Name="TransferAmountBox" Grid.Row="4" Grid.Column="1"/>
+
+                        <TextBlock Grid.Row="6" Grid.Column="0" Text="Data:" VerticalAlignment="Center"/>
+                        <DatePicker x:Name="TransferDatePicker" Grid.Row="6" Grid.Column="1"/>
+
+                        <StackPanel Grid.Row="8"
+                                    Grid.ColumnSpan="2"
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Right">
+                            <Button Content="Zapisz transfer"
+                                    Margin="0,0,8,0"
+                                    Style="{StaticResource PrimaryButton}"
+                                    Click="SaveTransfer_Click"/>
+                            <Button Content="Anuluj"
+                                    Click="Cancel_Click"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>
+
+
